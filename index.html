@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TAMIRJET | Bursa Tadilat ve Dekorasyon</title>
+
+  <meta
+    name="description"
+    content="TAMIRJET, Bursa ve çevresinde profesyonel tadilat, dekorasyon, boya, alçıpan, seramik, elektrik ve tesisat hizmetleri sunar."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #1d2733;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 28, 47, 0.96);
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 29px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #f5a623;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ffffff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f5a623;
+    }
+
+    .phone-button {
+      background: #f5a623;
+      color: #0a1c2f;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .phone-button:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(7, 24, 40, 0.82), rgba(7, 24, 40, 0.78)),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .hero-content {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 0;
+    }
+
+    .hero-content h1 {
+      max-width: 800px;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+
+    .hero-content h1 span {
+      color: #f5a623;
+    }
+
+    .hero-content p {
+      max-width: 680px;
+      font-size: 20px;
+      margin-bottom: 32px;
+      color: #e8edf2;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 7px;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #f5a623;
+      color: #0a1c2f;
+    }
+
+    .btn-primary:hover {
+      background: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: #ffffff;
+      color: #0a1c2f;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      max-width: 700px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: #f5a623;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #0a1c2f;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      margin-top: 12px;
+      color: #637282;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      padding: 32px 25px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(16, 40, 65, 0.09);
+      border-bottom: 4px solid transparent;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #f5a623;
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: #fff1d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #0a1c2f;
+    }
+
+    .service-card p {
+      color: #687786;
+    }
+
+    .about {
+      background: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 20px 20px 0 #f5a623;
+    }
+
+    .about-content span {
+      color: #f5a623;
+      font-weight: 800;
+    }
+
+    .about-content h2 {
+      font-size: 40px;
+      line-height: 1.2;
+      color: #0a1c2f;
+      margin: 10px 0 20px;
+    }
+
+    .about-content p {
+      color: #657382;
+      margin-bottom: 25px;
+    }
+
+    .advantages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .advantage {
+      background: #f5f7fa;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #263848;
+    }
+
+    .advantage::before {
+      content: "✓";
+      color: #f5a623;
+      margin-right: 8px;
+      font-weight: 900;
+    }
+
+    .numbers {
+      background: #0a1c2f;
+      color: #ffffff;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      gap: 25px;
+    }
+
+    .number-box h3 {
+      font-size: 45px;
+      color: #f5a623;
+    }
+
+    .number-box p {
+      color: #d9e1e8;
+      font-weight: bold;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      position: relative;
+      background: #ffffff;
+      padding: 30px 23px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(16, 40, 65, 0.08);
+    }
+
+    .process-number {
+      font-size: 48px;
+      color: rgba(245, 166, 35, 0.25);
+      font-weight: 900;
+    }
+
+    .process-card h3 {
+      color: #0a1c2f;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: #687786;
+    }
+
+    .contact {
+      background:
+        linear-gradient(rgba(7, 24, 40, 0.9), rgba(7, 24, 40, 0.9)),
+        url("https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #dce4eb;
+      font-size: 18px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .whatsapp {
+      background: #25d366;
+      color: #ffffff;
+    }
+
+    .whatsapp:hover {
+      background: #1daf54;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: #061321;
+      color: #cbd5df;
+      padding: 45px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 35px;
+    }
+
+    footer h3 {
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #b7c4cf;
+    }
+
+    footer a:hover {
+      color: #f5a623;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .copyright {
+      border-top: 1px solid #253545;
+      padding-top: 18px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      transition: 0.3s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .numbers-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .phone-button {
+        padding: 9px 13px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 78vh;
+      }
+
+      .hero-content h1 {
+        font-size: 42px;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+      }
+
+      .services-grid,
+      .numbers-grid,
+      .process-grid,
+      .advantages {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2,
+      .about-content h2,
+      .contact h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar">
+      <a href="#" class="logo">TAMIR<span>JET</span></a>
+
+      <nav>
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
+      <a href="tel:+905526071677" class="phone-button">
+        0552 607 16 77
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="anasayfa">
+      <div class="hero-content">
+        <h1>
+          Yaşam Alanlarınızı
+          <span>Profesyonelce Yeniliyoruz</span>
+        </h1>
+
+        <p>
+          TAMIRJET olarak ev, ofis ve iş yerlerinizde anahtar teslim
+          tadilat ve dekorasyon hizmetleri sunuyoruz. Kaliteli işçilik,
+          güvenilir ekip ve zamanında teslimat.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="tel:+905526071677" class="btn btn-primary">
+            Ücretsiz Keşif Al
+          </a>
+
+          <a href="#hizmetler" class="btn btn-secondary">
+            Hizmetleri İncele
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="hizmetler">
+      <div class="container">
+
+        <div class="section-title">
+          <span>HİZMETLERİMİZ</span>
+          <h2>Tüm Tadilat İşleriniz Tek Adreste</h2>
+          <p>
+            Projenizin her aşamasını deneyimli ekibimizle profesyonel
+            şekilde yönetiyoruz.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Anahtar Teslim Tadilat</h3>
+            <p>
+              Evinizi baştan sona yeniliyor, tüm işlemleri tek ekip
+              tarafından yönetiyoruz.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Boya ve Dekorasyon</h3>
+            <p>
+              İç ve dış cephe boya, dekoratif uygulamalar ve modern
+              tasarım çözümleri.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧱</div>
+            <h3>Alçıpan ve Asma Tavan</h3>
+            <p>
+              Alçıpan duvar, asma tavan, ışık bandı ve özel tavan
+              uygulamaları.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Su Tesisatı</h3>
+            <p>
+              Su kaçağı, tesisat yenileme, mutfak ve banyo tesisatı
+              hizmetleri.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Elektrik İşleri</h3>
+            <p>
+              Elektrik tesisatı, aydınlatma, priz, sigorta ve arıza
+              çözümleri.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔲</div>
+            <h3>Seramik ve Fayans</h3>
+            <p>
+              Banyo, mutfak ve zeminler için profesyonel seramik ve
+              fayans uygulaması.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="hakkimizda">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80"
+              alt="TAMIRJET tadilat ekibi"
+            >
+          </div>
+
+          <div class="about-content">
+            <span>NEDEN TAMIRJET?</span>
+
+            <h2>Güvenilir İşçilik, Kaliteli Sonuçlar</h2>
+
+            <p>
+              TAMIRJET, Bursa'da ev ve iş yeri tadilatında profesyonel
+              çözümler sunar. Projelerinizi planlıyor, uyguluyor ve
+              eksiksiz şekilde teslim ediyoruz.
+            </p>
+
+            <div class="advantages">
+              <div class="advantage">Ücretsiz Keşif</div>
+              <div class="advantage">Uzman Ekip</div>
+              <div class="advantage">Kaliteli Malzeme</div>
+              <div class="advantage">Zamanında Teslimat</div>
+              <div class="advantage">Uygun Fiyat</div>
+              <div class="advantage">Müşteri Memnuniyeti</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers">
+      <div class="container">
+        <div class="numbers-grid">
+
+          <div class="number-box">
+            <h3>100+</h3>
+            <p>Tamamlanan Proje</p>
+          </div>
+
+          <div class="number-box">
+            <h3>10+</h3>
+            <p>Uzman Personel</p>
+          </div>
+
+          <div class="number-box">
+            <h3>100%</h3>
+            <p>Müşteri Memnuniyeti</p>
+          </div>
+
+          <div class="number-box">
+            <h3>7/24</h3>
+            <p>İletişim Desteği</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="section-title">
+          <span>ÇALIŞMA SÜRECİMİZ</span>
+          <h2>4 Adımda Profesyonel Tadilat</h2>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+            <div class="process-number">01</div>
+            <h3>Bizimle İletişime Geçin</h3>
+            <p>
+              Telefon veya WhatsApp üzerinden projeniz hakkında bilgi verin.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">02</div>
+            <h3>Ücretsiz Keşif</h3>
+            <p>
+              Ekibimiz alanı inceler ve ihtiyaçlarınızı belirler.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">03</div>
+            <h3>Planlama ve Uygulama</h3>
+            <p>
+              Fiyat ve çalışma planı onaylandıktan sonra işe başlarız.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">04</div>
+            <h3>Eksiksiz Teslimat</h3>
+            <p>
+              Projenizi kontrol ederek temiz ve eksiksiz şekilde teslim ederiz.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="container">
+
+        <h2>Tadilat Projeniz İçin Hemen Bizi Arayın</h2>
+
+        <p>
+          Ücretsiz keşif ve fiyat teklifi almak için TAMIRJET ekibiyle
+          iletişime geçin.
+        </p>
+
+        <div class="contact-buttons">
+          <a href="tel:+905526071677" class="btn btn-primary">
+            📞 0552 607 16 77
+          </a>
+
+          <a
+            href="https://wa.me/905526071677"
+            class="btn whatsapp"
+            target="_blank"
+          >
+            WhatsApp'tan Yazın
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3 class="logo">TAMIR<span>JET</span></h3>
+          <p>
+            Bursa ve çevresinde profesyonel tadilat, dekorasyon,
+            boya, tesisat ve anahtar teslim yenileme hizmetleri.
+          </p>
+        </div>
+
+        <div>
+          <h3>Hızlı Menü</h3>
+          <div class="footer-links">
+            <a href="#anasayfa">Ana Sayfa</a>
+            <a href="#hizmetler">Hizmetler</a>
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#iletisim">İletişim</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>İletişim</h3>
+          <div class="footer-links">
+            <a href="tel:+905526071677">0552 607 16 77</a>
+            <a href="https://wa.me/905526071677">WhatsApp</a>
+            <p>Bursa, Türkiye</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        © 2026 TAMIRJET. Tüm hakları saklıdır.
+      </div>
+
+    </div>
+  </footer>
+
+  <a
+    href="https://wa.me/905526071677"
+    class="floating-whatsapp"
+    target="_blank"
+    aria-label="WhatsApp"
+  >
+    ☎
+  </a>
+
+</body>
+</html>
