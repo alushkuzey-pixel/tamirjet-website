@@ -906,6 +906,66 @@ Hayal ettiğiniz yaşam alanını birlikte inşa etmek için her zaman yanınız
   >
     ☎
   </a>
+<!-- LIGHTBOX -->
+<div id="lightbox" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,.92);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+">
+  <button id="lightbox-close" aria-label="Kapat" style="
+    position:absolute;
+    top:20px;
+    right:25px;
+    background:none;
+    border:0;
+    color:white;
+    font-size:42px;
+    cursor:pointer;
+  ">×</button>
 
+  <img id="lightbox-image" alt="TAMIRJET proje görüntüsü" style="
+    max-width:92vw;
+    max-height:88vh;
+    object-fit:contain;
+    border-radius:14px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+  ">
+</div>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxClose = document.getElementById("lightbox-close");
+
+  document.querySelectorAll("#projeler a").forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      lightboxImage.src = this.getAttribute("href");
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function(event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeLightbox();
+  });
+</script>
 </body>
 </html>
