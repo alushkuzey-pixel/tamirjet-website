@@ -506,22 +506,30 @@
       }
 /* ===== PROJECT GALLERY ===== */
 
-#projeler img {
-    transition: all .4s ease;
-    cursor: pointer;
-    border-radius: 16px;
-}
-
-#projeler img:hover {
-    transform: scale(1.06);
-    box-shadow: 0 25px 50px rgba(0,0,0,.35);
-}
-
 #projeler a {
+    display: block;
     overflow: hidden;
     border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+#projeler a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.30);
+}
+
+#projeler img {
+    width: 100%;
     display: block;
-}    }
+    transition: transform .45s ease;
+}
+
+#projeler a:hover img {
+    transform: scale(1.08);
+}
+}    
   </style>
 </head>
 
