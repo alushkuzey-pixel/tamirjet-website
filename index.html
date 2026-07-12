@@ -253,7 +253,30 @@
       border-radius: 18px;
       box-shadow: 20px 20px 0 #f5a623;
     }
+.about-image {
+    overflow: hidden;
+    border-radius: 18px;
+    transition: transform .35s ease;
+}
 
+.about-image img {
+    width: 100%;
+    min-height: 430px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 20px 20px 0 #f5a623;
+    transition: transform .45s ease, filter .45s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-10px);
+}
+
+.about-image:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.05);
+  box-shadow: 0 28px 55px rgba(10, 28, 47, .40);
+}
     .about-content span {
       color: #f5a623;
       font-weight: 800;
