@@ -655,6 +655,88 @@ transition:.4s;
 transform:scale(1.08);
 
 }
+   .ba-slider{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    height:420px;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.ba-slider img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+}
+
+.ba-before{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    height:100%;
+    overflow:hidden;
+}
+
+.ba-before img{
+    width:100%;
+    height:100%;
+}
+
+.ba-line{
+    position:absolute;
+    left:50%;
+    top:0;
+    width:3px;
+    height:100%;
+    background:#fff;
+    transform:translateX(-50%);
+}
+
+.ba-handle{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#f5a623;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    pointer-events:none;
+}
+
+.ba-range{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    cursor:ew-resize;
+}
+
+.ba-label{
+    position:absolute;
+    top:15px;
+    background:rgba(0,0,0,.6);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.ba-label-before{
+    left:15px;
+}
+
+.ba-label-after{
+    right:15px;
+} 
   </style>
 </head>
 
@@ -981,7 +1063,28 @@ Yaptığımız tadilatların önceki ve sonraki hali.
 
 <h3>Banyo Tadilatı</h3>
 
-<div class="compare-container">
+<div class="ba-slider">
+  <img src="after-bathroom.jpg" alt="Banyo tadilatı sonrası">
+
+  <div class="ba-before">
+    <img src="before-bathroom.jpg" alt="Banyo tadilatı öncesi">
+  </div>
+
+  <input
+    class="ba-range"
+    type="range"
+    min="0"
+    max="100"
+    value="50"
+    aria-label="Önce ve sonra karşılaştırması"
+  >
+
+  <div class="ba-line"></div>
+  <div class="ba-handle">↔</div>
+
+  <span class="ba-label ba-label-before">ÖNCE</span>
+  <span class="ba-label ba-label-after">SONRA</span>
+</div>
 
 <div class="compare-item">
 <h4>Önce</h4>
@@ -1161,6 +1264,24 @@ Yaptığımız tadilatların önceki ve sonraki hali.
 
   document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") closeLightbox();
+  });
+</script>
+  <script>
+  document.querySelectorAll(".ba-slider").forEach(slider => {
+    const range = slider.querySelector(".ba-range");
+    const before = slider.querySelector(".ba-before");
+    const line = slider.querySelector(".ba-line");
+    const handle = slider.querySelector(".ba-handle");
+
+    function updateSlider() {
+      const value = range.value + "%";
+      before.style.width = value;
+      line.style.left = value;
+      handle.style.left = value;
+    }
+
+    range.addEventListener("input", updateSlider);
+    updateSlider();
   });
 </script>
 </body>
