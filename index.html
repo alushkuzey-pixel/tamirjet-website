@@ -763,6 +763,23 @@ transform:scale(1.08);
 .compare-item img:hover{
     transform:scale(1.03);
 }
+    .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 64px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform .3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
   </style>
 </head>
 
@@ -770,7 +787,9 @@ transform:scale(1.08);
 
   <header>
     <div class="navbar">
-      <a href="#" class="logo">TAMIR<span>JET</span></a>
+     <a href="#anasayfa" class="logo">
+  <img src="logo.png" alt="TAMIRJET Logo" class="logo-img">
+</a>
 
       <nav>
         <a href="#anasayfa">Ana Sayfa</a>
