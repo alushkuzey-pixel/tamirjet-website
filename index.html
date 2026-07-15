@@ -488,13 +488,13 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .navbar {
         min-height: 68px;
       }
 
       .logo {
-        font-size: 24px;
+       width: 135px;
       }
 
       .phone-button {
@@ -763,18 +763,17 @@ transform:scale(1.08);
 .compare-item img:hover{
     transform:scale(1.03);
 }
-    .logo {
+   .logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
+    height: 100%;
 }
 
 .logo-img {
-  height: 95px;
-    width: auto;
+    width: 190px;
+    height: auto;
     display: block;
     object-fit: contain;
-    transition: transform .3s ease;
 }
 
 .logo-img:hover {
@@ -787,10 +786,9 @@ transform:scale(1.08);
 
   <header>
     <div class="navbar">
-     <a href="#anasayfa" class="logo">
-  <img src="logo.png" alt="TAMIRJET Logo" class="logo-img">
+   <a href="#anasayfa" class="logo">
+    <img src="logo-transparent.png" alt="TAMIRJET Logo" class="logo-img">
 </a>
-
       <nav>
         <a href="#anasayfa">Ana Sayfa</a>
         <a href="#hizmetler">Hizmetler</a>
